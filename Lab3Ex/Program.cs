@@ -30,9 +30,9 @@ namespace Lab3Ex
 
             InverseazaVector(numere);
 
-            CalculeazaNumerePrime(numere);
+            AfiseazaNumerePrime(numere);
         }
-
+        //Cel mai mare numar din vector
         static double CalculeazaCelMaiMareNumar(int[] numere)
         {
             int celMaiMareNumar = numere[0];
@@ -43,7 +43,7 @@ namespace Lab3Ex
             }
             return celMaiMareNumar;
         }
-
+        //Cel mai mic numar din vector
         static double CalculeazaCelMaiMicNumar(int[] numere)
         {
             int celMaiMicNumar = numere[0];
@@ -55,6 +55,7 @@ namespace Lab3Ex
             return celMaiMicNumar;
         }
 
+        //numere divizibile cu 3
         static void AfiseazaNumereDivizibileTrei(int[] numere)
         {
             Console.WriteLine("Numere care sunt divizibile cu 3:");
@@ -67,6 +68,7 @@ namespace Lab3Ex
             }
         }
 
+        //Scrieti o functie care va inversa elementele vectorului
         static void InverseazaVector(int[] numere)
         {
             int start = 0;
@@ -95,7 +97,8 @@ namespace Lab3Ex
             }
         }
 
-        static void CalculeazaNumerePrime(int[] numar)
+        //Numerele prime din vector
+        static void AfiseazaNumerePrime(int[] numar)
         {
             Console.WriteLine("Numerele prime din vector: ");
             int j;
