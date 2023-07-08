@@ -4,6 +4,9 @@ namespace Lab3Ex4
 {
     internal class Program
     {
+        /*Scrieti un program care va normaliza un sir de caractere citit de la tastatura astfel incat
+        fiecare cuvant din sir sa inceapa cu MAJUSCULA, restul literelor fiind
+        transformate in litere mici*/
         static void Main()
         {
             Console.WriteLine("Introdu o propozitie: ");
