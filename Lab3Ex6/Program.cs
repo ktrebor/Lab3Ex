@@ -45,7 +45,7 @@ namespace Lab3Ex6
                 }
             }
 
-            int[,] produsulMatricei = InmultesteMatricea(matriceaUnu, matriceaDoi, n, m);
+            int[,] produsulMatricei = InmultesteMatrice(matriceaUnu, matriceaDoi, n, m);
             Console.WriteLine("Produsul celor doua matrici:");
 
             for (int i = 0; i < n; i++)
@@ -58,7 +58,7 @@ namespace Lab3Ex6
             }
         }
 
-        static int[,] InmultesteMatricea(int[,] matriceaUnu, int[,] matriceaDoi, int n, int m)
+        static int[,] InmultesteMatrice(int[,] matriceaUnu, int[,] matriceaDoi, int n, int m)
         {
             int[,] produsulMatricei = new int[n, n];
 
