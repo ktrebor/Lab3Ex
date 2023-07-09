@@ -10,7 +10,7 @@ namespace Lab3Ex6
  */
         static void Main()
         {
-            Console.WriteLine("Introduceți dimensiunile matricilor:");
+            Console.WriteLine("Introdu dimensiunile matricilor:");
 
             Console.Write("n = ");
             int n = int.Parse(Console.ReadLine());
