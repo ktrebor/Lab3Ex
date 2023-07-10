@@ -27,15 +27,7 @@ namespace Lab3Ex2
 
         static int GasestePozitieSubstring(string text, string substring)
         {
-            for (int i = 0; i <= text.Length - substring.Length; i++)
-            {
-                if (text.Substring(i, substring.Length) == substring)
-                {
-                    return i;
-                }
-            }
-
-            return -1;
+            return text.IndexOf(substring);
         }
     }
 }

@@ -22,28 +22,9 @@ namespace Lab3Ex6
             int[,] matriceaDoi = new int[m, n];
 
             Console.WriteLine($"Ai introdus {m} coloane si {n} randuri pentru prima matrice si {n} coloane si {m} randuri pentru a doua matrice");
-
-            Console.WriteLine("Introdu numerele pentru prima matrice:");
-
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < m; j++)
-                {
-                    Console.Write($"Numar pentru prima matrice cu pozitia: [{i},{j}] = ");
-                    matriceaUnu[i, j] = int.Parse(Console.ReadLine());
-                }
-            }
-
-            Console.WriteLine("Introdu numerele pentru a doua matrice:");
-
-            for (int i = 0; i < m; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    Console.Write($"Numar pentru a doua matrice cu pozitia: [{i},{j}] = ");
-                    matriceaDoi[i, j] = int.Parse(Console.ReadLine());
-                }
-            }
+            
+            CitesteMatrice(matriceaUnu, "prima matrice");
+            CitesteMatrice(matriceaDoi, "a doua matrice");
 
             int[,] produsulMatricei = InmultesteMatrice(matriceaUnu, matriceaDoi, n, m);
             Console.WriteLine("Produsul celor doua matrici:");
@@ -55,6 +36,23 @@ namespace Lab3Ex6
                     Console.Write(produsulMatricei[i, j] + " ");
                 }
                 Console.WriteLine();
+            }
+        }
+
+        static void CitesteMatrice(int[,] matrice, string denumireMatrice)
+        {
+            int randuri = matrice.GetLength(0);
+            int coloane = matrice.GetLength(1);
+
+            Console.WriteLine($"Introdu numerele pentru {denumireMatrice}:");
+
+            for (int i = 0; i < randuri; i++)
+            {
+                for (int j = 0; j < coloane; j++)
+                {
+                    Console.Write($"Numar pentru {denumireMatrice} cu pozitia: [{i},{j}] = ");
+                    matrice[i, j] = int.Parse(Console.ReadLine());
+                }
             }
         }
 

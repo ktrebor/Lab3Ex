@@ -16,7 +16,7 @@ namespace Lab3Ex7
 
         static int AdunaNumere(int n)
         {
-            if (n == 1)
+            if (n <= 1)
             {
                 return 1;
             }

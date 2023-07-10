@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Lab3Ex
 {
@@ -19,19 +20,32 @@ namespace Lab3Ex
             }
 
             double celMaiMareNumar = CalculeazaCelMaiMareNumar(numere);
-
             Console.WriteLine($"Cel mai mare numar din vector este: {celMaiMareNumar}");
 
             double celMaiMicNumar = CalculeazaCelMaiMicNumar(numere);
-
             Console.WriteLine($"Cel mai mic numar din vector este: {celMaiMicNumar}");
 
-            AfiseazaNumereDivizibileTrei(numere);
+            int[] divizibileCuTrei = CalculeazaNumereDivizibileTrei(numere);
+            Console.WriteLine($"Numerele care sunt divizibile cu 3: ");
+            AfiseazaVector(divizibileCuTrei);
 
-            InverseazaVector(numere);
+            int[] vectorInversat = InverseazaVector(numere);
+            Console.WriteLine($"Vectorul inversat: ");
+            AfiseazaVector(vectorInversat);
 
-            AfiseazaNumerePrime(numere);
+            int[] vectorNumerePrime = CalculeazaNumerePrime(numere);
+            Console.WriteLine($"Numere prime din vector: ");
+            AfiseazaVector(vectorNumerePrime);
         }
+
+        static void AfiseazaVector(int[] numere)
+        {
+            foreach (var num in numere)
+            {
+                Console.WriteLine($" {num}");
+            }
+        }
+
         //Cel mai mare numar din vector
         static double CalculeazaCelMaiMareNumar(int[] numere)
         {
@@ -43,6 +57,7 @@ namespace Lab3Ex
             }
             return celMaiMareNumar;
         }
+
         //Cel mai mic numar din vector
         static double CalculeazaCelMaiMicNumar(int[] numere)
         {
@@ -56,25 +71,26 @@ namespace Lab3Ex
         }
 
         //numere divizibile cu 3
-        static void AfiseazaNumereDivizibileTrei(int[] numere)
+        static int[] CalculeazaNumereDivizibileTrei(int[] numere)
         {
-            Console.WriteLine("Numere care sunt divizibile cu 3:");
+            List<int> divizibileCuTrei = new List<int>();
+
             foreach (var num in numere)
             {
                 if (num % 3 == 0)
                 {
-                    Console.WriteLine($" {num}");
+                    divizibileCuTrei.Add(num);
                 }
             }
+
+            return divizibileCuTrei.ToArray();
         }
 
         //Scrieti o functie care va inversa elementele vectorului
-        static void InverseazaVector(int[] numere)
+        static int[] InverseazaVector(int[] numere)
         {
             int start = 0;
             int sfarsit = numere.Length - 1;
-
-            Console.WriteLine("Vectorul in ordine inversa: ");
 
             while (start < sfarsit)
             {
@@ -86,36 +102,35 @@ namespace Lab3Ex
                 sfarsit--;
             }
 
-            AfiseazaVector(numere);
-        }
-
-        static void AfiseazaVector(int[] numere)
-        {
-            foreach (var num in numere)
-            {
-                Console.WriteLine($" {num}");
-            }
+            return numere;
         }
 
         //Numerele prime din vector
-        static void AfiseazaNumerePrime(int[] numar)
+        static int[] CalculeazaNumerePrime(int[] numere)
         {
-            Console.WriteLine("Numerele prime din vector: ");
-            int j;
-            for (int i = 0; i < numar.Length; i++)
+            List<int> numerePrime = new List<int>();
+
+            foreach (var num in numere)
             {
-                for (j = 2; j < numar[i]; j++)
-                    if ((numar[i] % j == 0))
+                bool estePrim = true;
+
+                for (int i = 2; i < num; i++)
+                {
+                    if (num % i == 0)
                     {
+                        estePrim = false;
                         break;
                     }
-                    if (j == numar[i])
-                    {
-                        Console.WriteLine($"{numar[i]} este prim");
-                    }
+                }
 
+                if (estePrim && num > 1)
+                {
+                    numerePrime.Add(num);
+                }
             }
-        }
 
+            return numerePrime.ToArray();
+
+        }
     }
 }
